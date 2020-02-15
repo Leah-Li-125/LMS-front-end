@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Link, withRouter } from "react-router-dom";
+import { Link, NavLink, withRouter } from "react-router-dom";
 
 const NavContainer = styled.ul`
 	display: flex;
@@ -11,34 +11,33 @@ const NavContainer = styled.ul`
 	}
 `;
 
-const NavItem = styled(Link)`
-	background-color: ${props => props.isActive && "yellow"};
-`;
-
 const TopNav = props => {
-	//have to write too many, to use NavLink
-	const path = props.location.pathname;
-	const isOnCourses = path === "/courses";
-	const isOnStudents = path === "/students";
-	const isOnLecturers = path === "/lecturers";
-
 	return (
 		<nav>
 			<NavContainer>
 				<li>
-					<NavItem isActive={isOnCourses} to="/courses">
+					<NavLink
+						activeStyle={{ backgroundColor: "yellow" }}
+						to="/courses"
+					>
 						Courses
-					</NavItem>
+					</NavLink>
 				</li>
 				<li>
-					<NavItem isActive={isOnStudents} to="/students">
+					<NavLink
+						activeStyle={{ backgroundColor: "yellow" }}
+						to="/students"
+					>
 						Students
-					</NavItem>
+					</NavLink>
 				</li>
 				<li>
-					<NavItem isActive={isOnLecturers} to="/lecturers">
+					<NavLink
+						activeStyle={{ backgroundColor: "yellow" }}
+						to="/lecturers"
+					>
 						Lecturers
-					</NavItem>
+					</NavLink>
 				</li>
 			</NavContainer>
 		</nav>
