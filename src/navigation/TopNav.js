@@ -39,6 +39,9 @@ const TopNav = props => {
 						Lecturers
 					</NavLink>
 				</li>
+				<button onClick={() => props.history.push("/students")}>
+					go to student page
+				</button>
 			</NavContainer>
 		</nav>
 	);
